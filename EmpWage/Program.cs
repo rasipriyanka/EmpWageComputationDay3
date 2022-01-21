@@ -6,8 +6,10 @@ namespace EmpWage
     {
         static void Main(string[] args)
         {
+            //---------Creating Instance For Class------------//
             EmployeeWage empObj = new EmployeeWage();
-            empObj.UseCase();
+            //------obj.methodName-----------------//
+            empObj.UseCaseTwo();
 
         }
     }
