@@ -9,7 +9,7 @@ namespace EmpWage
             //---------Creating Instance For Class------------//
             EmployeeWage empObj = new EmployeeWage();
             //------obj.methodName-----------------//
-            empObj.NoWorkingDays();
+            empObj.MaxHrs();
 
         }
     }
