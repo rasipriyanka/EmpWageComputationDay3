@@ -6,7 +6,9 @@ namespace EmpWage
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            EmployeeWage empObj = new EmployeeWage();
+            empObj.UseCase();
+
         }
     }
 }
