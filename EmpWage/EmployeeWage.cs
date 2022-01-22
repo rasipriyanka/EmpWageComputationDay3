@@ -13,48 +13,46 @@ namespace EmpWage
         /// <summary>
         /// ---------Instance Variables-------///
         /// </summary>
-        const int Is_Full_Time = 1;
-        const int Is_Part_Time = 2;
-        const int Emp_Rate_Per_Hour = 20;
-        const int Num_Of_Working_days = 20;
-        const int Max_Hrs_In_Month = 60;
-        //---------Method Starts----------------//
-        public void MaxHrs()
+
+
+        const int IS_FULL_TIME = 1; //fields here to assign constant values by using keyword const
+        const int IS_PART_TIME = 2;
+        const int Emp_Rate_Per_Hr = 20;
+        const int Total_Working_Days = 20;
+        const int Working_Hours = 100;
+        public  void EmployeeWageUseCase7() //creating method for a class
         {
-            int empHrs = 0;
-            int empWage = 0;
-            int totalEmpWage = 0;
-            int totalEmpHrs = 0;
-            int totalWorkingDays = 0;
-            Random randomNumber = new Random();
-
-            while (totalEmpHrs<=Max_Hrs_In_Month && totalWorkingDays<Num_Of_Working_days)
+            int empHrs = 0, totalEmployeeWage = 0, employeeWage = 0, empWorkingHours = 0;
+            int day = 1;
+            while (day <= Total_Working_Days && empWorkingHours <= Working_Hours)
             {
-                int checkingNum = randomNumber.Next(0, 3);
-                totalWorkingDays++;
-                switch (checkingNum)
+                Random random = new Random(); //Creating a object for random value
+                int empCheck = random.Next(0, 3);// To get the values from 0 to 2
+                switch (empCheck)
                 {
-                    case Is_Full_Time:
+                    case IS_FULL_TIME: // If random value is 1 it will execute block of statement
                         empHrs = 8;
-                        Console.WriteLine("\nEmp present FullTime");
+                        Console.WriteLine("{0} day Employee is working full time", day);
                         break;
-                    case Is_Part_Time:
+                    case IS_PART_TIME: // If random value is 2 it will execute block of statement
                         empHrs = 4;
-                        Console.WriteLine("\nEmp present partTime");
-
+                        Console.WriteLine("{0} day Employee is working part time", day);
                         break;
                     default:
-                        empHrs = 0;
-                        Console.WriteLine("\nEmp absent");
-
+                        empHrs = 0; // If random value is 0 then it will execotr
+                        Console.WriteLine("{0} day Employee is absent", day);
                         break;
                 }
-
-                totalEmpHrs = totalEmpHrs + empHrs;
-                Console.WriteLine("days: "+ totalWorkingDays+"\tEmp hrs "+ empHrs);
+                // Employee wage calculation part
+                employeeWage = empHrs * Emp_Rate_Per_Hr;
+                // Console.WriteLine("Employee Wage :" + employeeWage);
+                totalEmployeeWage += employeeWage; //totalEmployeeWage=totlaEmployeeWage+employeeWage
+                empWorkingHours += empHrs;         //empWorkingHours=empWorkingHours+empHrs
+                day++;
             }
-            totalEmpWage = totalEmpHrs * Emp_Rate_Per_Hour;
-            Console.WriteLine("\n\nTotal Employee wage :\t" + totalEmpWage);
+            Console.WriteLine("The Total employee wage per {1} days {2} Hrs: {3}", Total_Working_Days, empWorkingHours, totalEmployeeWage);//To get the total wage
+
+
         }
     }
 }
