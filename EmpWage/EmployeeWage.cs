@@ -58,6 +58,9 @@ namespace EmpWage
                 totalEmpHrs += empHrs;
                 Console.WriteLine("Day {0} is {1} hrs", totalWorkingDays, empHrs);
                 totalWorkingDays++;
+                int DailyWage = empHrs * companyEmpWage.empRatePerHr;
+                int[] total = { DailyWage };          // Creting an arry for to store the Daily employee wage
+                Console.WriteLine("Daily Wage of Employee: {0}", total[0]);
             }
             return totalEmpHrs * companyEmpWage.empRatePerHr;
         }
