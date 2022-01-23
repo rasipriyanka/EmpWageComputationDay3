@@ -2,21 +2,20 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 //---------NameSpace---------------//
 namespace EmpWage
 {
     //---------Class Name------------//
-    internal class EmployeeWage
+    class EmployeeWage : IComputeEmployeeWages
     {
-        /// <summary>
-        /// Employee Wage
-        /// </summary            
         public const int Is_Full_Time = 2; //fields here to assign constant values by using keyword const
         public const int Is_Part_Time = 1;
         private int numOfCompany = 0;
-        private EmpWage[] companyEmpWageArray;
+        private CompanyEmpWage[] companyEmpWageArray;
         public EmployeeWage()
         {
             this.companyEmpWageArray = new CompanyEmpWage[5];
@@ -38,7 +37,7 @@ namespace EmpWage
         {
             {
                 int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 1;
-                while (totalEmpHrs <=companyEmpWage.maxHoursPerMonth && totalWorkingDays < companyEmpWage.numOfWorkingDays)
+                while (totalEmpHrs <= companyEmpWage.maxHoursPerMonth && totalWorkingDays < companyEmpWage.numOfWorkingDays)
                 {
                     //totalWorkingDays++;
                     Random random = new Random(); //Creating a object for random value
@@ -47,15 +46,15 @@ namespace EmpWage
                     {
                         case Is_Full_Time: // If random value is 1 it will execute block of statement
                             empHrs = 8;
-                            // Console.WriteLine("{0} day Employee is working full time", day);
+                            
                             break;
                         case Is_Part_Time: // If random value is 2 it will execute block of statement
                             empHrs = 4;
-                            // Console.WriteLine("{0} day Employee is working part time", day);
+                           
                             break;
                         default:
-                            empHrs = 0; // If random value is 0 then it will execotr
-                                        // Console.WriteLine("{0} day Employee is absent", day);
+                            empHrs = 0; // If random value is 0 then it will execute
+                                        
                             break;
                     }
                     // Employee wage calculation part
@@ -65,7 +64,6 @@ namespace EmpWage
                 }
                 return totalEmpHrs * companyEmpWage.empRatePerHr;
             }
-            Console.ReadLine();
         }
     }
 
