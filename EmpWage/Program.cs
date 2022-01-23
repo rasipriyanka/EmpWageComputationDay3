@@ -7,9 +7,11 @@ namespace EmpWage
         static void Main(string[] args)
         {
             //---------Creating Instance For Class------------//
-            EmployeeWage empWageBuilder = new EmployeeWage();
-            empWageBuilder.AddCompanyEmpWage("Dmart", 20, 20, 90);
-            empWageBuilder.AddCompanyEmpWage("TATA", 20, 23, 100);
+            EmployeeWage empWageBuilder = new EmployeeWage(); // Creating a Object
+            empWageBuilder.AddCompanyEmpWage("hgs", 20, 20, 90);
+            empWageBuilder.AddCompanyEmpWage("abc", 40, 23, 100);
+            empWageBuilder.AddCompanyEmpWage("jkk", 12, 22, 100);
+            empWageBuilder.AddCompanyEmpWage("jio", 11, 21, 100);
             empWageBuilder.computeEmpWage();
             Console.ReadLine();
         }
