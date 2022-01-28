@@ -7,13 +7,13 @@ using System.Text;
 //---------NameSpace---------------//
 namespace EmpWage
 {
-    //---------Class Name------------//
+    //--------Class Name------------//
     internal class EmployeeWage
     {
         /// <summary>
         /// Employee Wage
         /// </summary            
-        public const int Is_Full_Time = 2; //fields here to assign constant values by using keyword const
+        public const int Is_Full_Time = 2; //fields  to assign constant values by using keyword const
         public const int Is_Part_Time = 1;
         private int numOfCompany = 0;
         private EmpWage[] companyEmpWageArray;
